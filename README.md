@@ -4,6 +4,18 @@ Professional web application for a pet grooming salon (Spring Boot + React).
 
 Successor to the university desktop project [groomer-salon-app](https://github.com/alexef360/groomer-salon-app).
 
+## About
+Paw Care Groomer is a full-stack web application for a boutique dog grooming salon.
+It covers the public marketing site (landing, pricing, before/after gallery) and an
+authenticated app for pet owners, reception, groomers, and admins.
+
+### Highlights
+- Role-based access: PET_OWNER, RECEPTION, GROOMER, ADMIN
+- Reception desk: calendar, quick booking, waitlist, team board
+- Groomer day schedule with visit status flow (planned → in progress → ready → done)
+- Owner self-service: pets, bookings, account
+- Security-minded setup: JWT, BCrypt, env-based prod config, login rate limiting, groomer visit scoping
+
 ## Stack
 
 - Backend: Java, Spring Boot, JPA, Security, PostgreSQL
