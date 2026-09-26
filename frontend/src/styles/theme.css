@@ -1,0 +1,323 @@
+/* =============================================================================
+   Paw Care Groomer — Design System
+   Exclusive Calm Spa · Flat · Accessible
+   ============================================================================= */
+
+:root {
+  /* --- Brand --- */
+  --brand-name: "Paw Care Groomer";
+  --brand-short: "Paw Care";
+
+  /* --- Color palette --- */
+  --bg: #2a2a28;
+  --bg-base: #2a2a28;
+  --bg-elevated: #333230;
+  --bg-hover: rgba(255, 255, 255, 0.05);
+  --bg-surface: #333230;
+
+  --text: #f3eee6;
+  --text-ivory: #f3eee6;
+  --text-muted: rgba(243, 238, 230, 0.68);
+  --text-soft: rgba(243, 238, 230, 0.55);
+  --text-on-cta: #2a2a28;
+  --brand: #f3eee6;
+
+  --cta: #7d9b8a;
+  --cta-hover: #8fad9c;
+  --cta-soft: rgba(125, 155, 138, 0.15);
+  --cta-soft-strong: rgba(125, 155, 138, 0.22);
+  --cta-glow: rgba(125, 155, 138, 0.55);
+
+  --border: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-sage: #7d9b8a;
+  --line: rgba(243, 238, 230, 0.1);
+
+  --danger: #d98981;
+  --danger-bg: rgba(220, 38, 38, 0.2);
+  --danger-border: rgba(220, 38, 38, 0.45);
+  --danger-text: #efc2bb;
+
+  --ok-bg: rgba(125, 155, 138, 0.18);
+  --ok-border: rgba(125, 155, 138, 0.35);
+
+  /* --- Typography --- */
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  --font-weight-cta: 600;
+  --letter-kicker: 0.08em;
+
+  /* --- Radii & motion --- */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-pill: 999px;
+  --transition: all 0.2s ease;
+
+  /* --- Layout --- */
+  --sidebar-width: 280px;
+  --control-height: 44px;
+  --control-height-sm: 38px;
+
+  /* --- App shell aliases (used across .as-*) --- */
+  --as-bg: var(--bg-base);
+  --as-panel: var(--bg-surface);
+  --as-line: var(--line);
+  --as-text: var(--text-ivory);
+  --as-muted: var(--text-muted);
+  --as-sage: var(--cta);
+  --as-ink: var(--text-on-cta);
+
+  /* --- Pattern --- */
+  --paw-pattern: url("../assets/paw-pattern.svg?v=8");
+  --paw-pattern-size: 2400px 2400px;
+}
+
+/* ---------------------------------------------------------------------------
+   Global canvas — paw pattern on every page (~3.5% effective opacity in SVG)
+   --------------------------------------------------------------------------- */
+body,
+.bg-paw-pattern {
+  background-color: var(--bg-base);
+  background-image: var(--paw-pattern);
+  background-repeat: repeat;
+  background-size: var(--paw-pattern-size);
+  background-position: center top;
+}
+
+/* ---------------------------------------------------------------------------
+   Typography primitives
+   --------------------------------------------------------------------------- */
+.ds-kicker,
+.as-kicker {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: var(--letter-kicker);
+  text-transform: uppercase;
+  color: var(--cta);
+}
+
+.ds-lead,
+.as-lead {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------------------------------
+   Buttons — Primary / Secondary / Danger
+   Primary CTA: ALWAYS sage fill + dark graphite text (font-weight 600)
+   --------------------------------------------------------------------------- */
+.as-btn,
+.ds-btn-primary,
+button.as-btn,
+a.as-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: var(--control-height);
+  padding: 0.65rem 1.1rem;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--cta) !important;
+  color: var(--text-on-cta) !important;
+  -webkit-text-fill-color: var(--text-on-cta);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-cta);
+  font-size: 0.92rem;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.as-btn:hover:not(:disabled),
+.ds-btn-primary:hover:not(:disabled),
+button.as-btn:hover:not(:disabled),
+a.as-btn:hover:not(:disabled) {
+  background: var(--cta-hover) !important;
+  color: var(--text-on-cta) !important;
+  -webkit-text-fill-color: var(--text-on-cta);
+  text-decoration: none;
+}
+
+.as-btn:disabled,
+.ds-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.as-btn-ghost,
+.ds-btn-secondary,
+button.as-btn-ghost,
+a.as-btn-ghost {
+  background: transparent !important;
+  border: 1px solid var(--border-sage) !important;
+  color: var(--text-ivory) !important;
+  -webkit-text-fill-color: var(--text-ivory);
+  font-weight: var(--font-weight-cta);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.as-btn-ghost:hover:not(:disabled),
+.ds-btn-secondary:hover:not(:disabled) {
+  background: var(--cta-soft) !important;
+  color: var(--text-ivory) !important;
+  -webkit-text-fill-color: var(--text-ivory);
+}
+
+.as-btn-danger,
+button.as-btn-danger {
+  background: var(--danger) !important;
+  color: var(--text-on-cta) !important;
+  -webkit-text-fill-color: var(--text-on-cta);
+  border: none !important;
+  font-weight: var(--font-weight-cta);
+}
+
+.as-btn-danger:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+/* ---------------------------------------------------------------------------
+   Forms
+   --------------------------------------------------------------------------- */
+.as-field-inline,
+.as-form label,
+label.as-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--text-ivory);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.as-form input,
+.as-form select,
+.as-form textarea,
+.as-field-inline input,
+.as-field-inline select,
+.as-field-inline textarea,
+.as-select,
+label.as-field input,
+label.as-field select,
+label.as-field textarea {
+  min-height: 42px;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-base);
+  color: var(--text-ivory);
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.as-form input:focus,
+.as-form select:focus,
+.as-form textarea:focus,
+.as-field-inline input:focus,
+.as-select:focus,
+label.as-field input:focus,
+label.as-field select:focus,
+label.as-field textarea:focus {
+  outline: none;
+  border-color: var(--cta);
+  box-shadow: 0 0 0 3px var(--cta-glow);
+}
+
+/* ---------------------------------------------------------------------------
+   Status badges
+   --------------------------------------------------------------------------- */
+.as-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-ivory);
+}
+
+.as-badge-planned {
+  background: rgba(243, 238, 230, 0.12);
+  color: var(--text-ivory);
+  box-shadow: inset 0 0 0 1px rgba(243, 238, 230, 0.2);
+}
+
+.as-badge-in_progress {
+  background: rgba(125, 155, 138, 0.2);
+  color: #d4e6db;
+  box-shadow: inset 0 0 0 1px rgba(125, 155, 138, 0.4);
+}
+
+.as-badge-ready {
+  background: rgba(143, 173, 156, 0.28);
+  color: #e8f3ec;
+  box-shadow: inset 0 0 0 1px rgba(143, 173, 156, 0.45);
+}
+
+.as-badge-completed {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(243, 238, 230, 0.78);
+}
+
+.as-badge-cancelled {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  box-shadow: inset 0 0 0 1px var(--danger-border);
+}
+
+/* ---------------------------------------------------------------------------
+   Separators & empty states
+   --------------------------------------------------------------------------- */
+.ds-separator,
+.as-separator {
+  border: none;
+  border-top: 1px solid var(--border-subtle);
+  margin: 1rem 0;
+}
+
+.ds-empty,
+.as-empty {
+  padding: 1.75rem 1.25rem;
+  border: 1px dashed rgba(125, 155, 138, 0.3);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.ds-empty-hint,
+.as-empty-hint {
+  margin: 0.35rem 0 0.85rem;
+  font-size: 0.88rem;
+  color: var(--text-soft);
+}
+
+/* ---------------------------------------------------------------------------
+   Sidebar active state (tokenized)
+   --------------------------------------------------------------------------- */
+.as-nav-link.is-active {
+  background: var(--cta-soft);
+  color: var(--text-ivory);
+  border-left-color: var(--cta);
+}
+
+.as-nav-link:hover {
+  background: rgba(125, 155, 138, 0.12);
+  color: var(--text-ivory);
+}
+
+.as-nav-icon,
+.as-icon {
+  color: var(--cta);
+}

@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: web-groomer-db
+    environment:
+      POSTGRES_DB: groomer
+      POSTGRES_USER: groomer
+      POSTGRES_PASSWORD: groomer
+    ports:
+      - "5432:5432"
+    volumes:
+        - web-groomer-data:/var/lib/postgresql/data
+volumes:
+  web-groomer-data:

@@ -1,0 +1,12 @@
+backend/target/
+backend/.idea/
+frontend/node_modules/
+frontend/dist/
+.idea/
+.vscode/
+.cursor/
+.env
+*.env
+application-local.properties
+.DS_Store
+backend/body.txt
